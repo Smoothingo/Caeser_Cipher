@@ -25,12 +25,12 @@ def caesar_cipher(text, key, mode):
 
 def decrypt_without_key(ciphertext):
     """Decrypts the ciphertext without knowing the key by brute-force."""
-    with open("output_brute_force.txt", "w") as output_file:
+    with open("decryptbrute.txt", "w") as output_file:
         for key in range(26):
             plaintext = caesar_cipher(ciphertext, key, -1)
             output_file.write(f"Key: {key}\n")
             output_file.write(plaintext + "\n\n")
-    print("Output written to output_brute_force.txt")
+    print("Output written to decryptbrute.txt")
 
 # Read input file
 input_file_path = os.path.abspath('text.txt')
@@ -48,7 +48,7 @@ while True:
             key = input("Enter a key value: ")
             if key.isdigit():
                 key = int(key)
-                output_file_name = f"ciphertext_key{key}.txt"
+                output_file_name = "encrypt.txt"
                 with open(output_file_name, 'w') as output_file:
                     ciphertext = caesar_cipher(plaintext, key, 1)
                     output_file.write(ciphertext)
@@ -63,14 +63,14 @@ while True:
                 with open(input_file_path, 'r') as input_file:
                     ciphertext = input_file.read()
                     plaintext = caesar_cipher(ciphertext, key, -1)
-                    output_file_name = f"output_decoded_key{key}.txt"
+                    output_file_name = "decryptkey.txt"
                     with open(output_file_name, 'w') as output_file:
                         output_file.write(plaintext)
                     print(f"Output written to {output_file_name}")
             else:
                 print("Invalid key value entered")
         elif mode == 3:
-            input_file_path = input("Enter the input file name: ")
+            input_file_path = "text.txt"
             with open(input_file_path, 'r') as input_file:
                 ciphertext = input_file.read()
                 decrypt_without_key(ciphertext)
