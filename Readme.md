@@ -1,15 +1,16 @@
-# BESTE CAESER VERSCHLÜSSELUNG
+# Caeser_Cipher
 
-Markus Kattner made a pretty easy to use ""Caeser Verschlüsselung"" for everyone to use
+Beste Verschlüsselung
+
 
 
 # Requirements
 
-* import os !!!
-* run the main.py file
-* you can type your text that you want to encrypt/decrypt in the file "text.txt"
-* You can see the encrypted/decrypted text in the file "FText.txt"
+* write the text you want to encrypt/decrypt in the file text.txt
+* go to main.py and run it
+* u can see the results in the files made for each action.
+  encrypt result in = "encrypt.txt"
+* decrypt with Key resulst are in = "decryptkey.txt"
 
 
-
-### I hope you like my dumb shit
+# HAVE FUN
