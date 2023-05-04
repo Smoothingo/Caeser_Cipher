@@ -24,13 +24,14 @@ def caesar_cipher(text, key, mode):
     return result
 
 def decrypt_without_key(ciphertext):
-    """Decrypts the ciphertext without knowing the key by brute-force."""
-    with open("decryptbrute.txt", "w") as output_file:
-        for key in range(26):
-            plaintext = caesar_cipher(ciphertext, key, -1)
-            output_file.write(f"Key: {key}\n")
-            output_file.write(plaintext + "\n\n")
-    print("Output written to decryptbrute.txt")
+    output_file_path = os.path.abspath('NoKeyDecrypt.txt')
+    max_chars = int(input("Enter the maximum number of characters to output: "))
+    with open(output_file_path, "w", encoding="utf-8") as output_file:
+        for i in range(1, 26):
+            plaintext = caesar_cipher(ciphertext, i, -1)
+            output_file.write(f"Shift = {i}\n")
+            output_file.write(plaintext[:max_chars] + "\n\n")
+    print(f"Results written to {output_file_path}")
 
 # Read input file
 input_file_path = os.path.abspath('text.txt')
@@ -49,7 +50,7 @@ while True:
             if key.isdigit():
                 key = int(key)
                 output_file_name = "encrypt.txt"
-                with open(output_file_name, 'w') as output_file:
+                with open(output_file_name, 'w', encoding = "utf-8") as output_file:
                     ciphertext = caesar_cipher(plaintext, key, 1)
                     output_file.write(ciphertext)
                     print(f"Ciphertext written to {output_file_name}")
@@ -60,22 +61,21 @@ while True:
             if key.isdigit():
                 key = int(key)
                 input_file_path = input("Enter the input file name: ")
-                with open(input_file_path, 'r') as input_file:
+                with open(input_file_path, 'r', encoding="utf-8") as input_file:
                     ciphertext = input_file.read()
                     plaintext = caesar_cipher(ciphertext, key, -1)
                     output_file_name = "decryptkey.txt"
-                    with open(output_file_name, 'w') as output_file:
+                    with open(output_file_name, 'w', encoding= "utf-8") as output_file:
                         output_file.write(plaintext)
                     print(f"Output written to {output_file_name}")
             else:
                 print("Invalid key value entered")
         elif mode == 3:
             input_file_path = "text.txt"
-            with open(input_file_path, 'r') as input_file:
+            with open(input_file_path, 'r', encoding="utf-8") as input_file:
                 ciphertext = input_file.read()
                 decrypt_without_key(ciphertext)
         else:
             print("Invalid mode entered")
     else:
         print("Invalid mode entered")
-#BEAn

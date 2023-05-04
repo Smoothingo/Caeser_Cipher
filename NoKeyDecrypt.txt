@@ -1,0 +1,75 @@
+Shift = 1
+GZ
+
+Shift = 2
+FY
+
+Shift = 3
+EX
+
+Shift = 4
+DW
+
+Shift = 5
+CV
+
+Shift = 6
+BU
+
+Shift = 7
+AT
+
+Shift = 8
+ZS
+
+Shift = 9
+YR
+
+Shift = 10
+XQ
+
+Shift = 11
+WP
+
+Shift = 12
+VO
+
+Shift = 13
+UN
+
+Shift = 14
+TM
+
+Shift = 15
+SL
+
+Shift = 16
+RK
+
+Shift = 17
+QJ
+
+Shift = 18
+PI
+
+Shift = 19
+OH
+
+Shift = 20
+NG
+
+Shift = 21
+MF
+
+Shift = 22
+LE
+
+Shift = 23
+KD
+
+Shift = 24
+JC
+
+Shift = 25
+IB
+
